@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-image: url("https://i.imgur.com/mSPU63U.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100vh;
+        }
+        table{
+            position: absolute;
+            width: 15%;
+            height: 40vh;
+            background-color: rgb(61, 58, 58);
+            text-align: center;
+            top: 25%;
+            left: 41%;
+            border-radius: 8px;
+            color: white;
+            font-size: 25px;
+        }
+        input{
+            position: relative;
+            width: 99%;
+            height: 100px;
+            left:-1%;
+            background-color: white;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="4">
+                <form name="forms">
+                    <input id="input" name="myinput" disabled>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td id="num7" onclick="cal(7)">7</td>
+            <td id="num8" onclick="cal(8)">8</td>
+            <td id="num9" onclick="cal(9)">9</td>
+            <td id="num+" onclick="cal('+')">+</td>
+        </tr>
+        <tr>
+            <td id="num4" onclick="cal(4)">4</td>
+            <td id="num5" onclick="cal(5)">5</td>
+            <td id="num6" onclick="cal(6)">6</td>
+            <td id="num-" onclick="cal('-')">-</td>
+        </tr>
+        <tr>
+            <td id="num1" onclick="cal(1)">1</td>
+            <td id="num2" onclick="cal(2)">2</td>
+            <td id="num3" onclick="cal(3)">3</td>
+            <td id="num*" onclick="cal('*')">*</td>
+        </tr>
+        <tr>
+            <td id="numC" onclick="clr()">C</td>
+            <td id="num0" onclick="cal(0)">0</td>
+            <td id="num=" onclick="ans()">=</td>
+            <td id="num/" onclick="cal('/')">/</td>
+        </tr>
+    </table>
+    <script>
+        var inputscreen=document.getElementById('input');
+        function cal(a){
+            var input=document.getElementById('input').value;
+            input+=a;
+            inputscreen.value=input;
+        }
+        function clr(){
+            inputscreen.value="";
+        }
+        function ans(){
+            var input=document.getElementById('input').value;
+            inputscreen.value=eval(input);
+        }
+    </script>
+</body>
+</html>
